@@ -1,9 +1,13 @@
-PROMPT1 = "Categorize the objects that are culturally relevant based on their function into these categories: ['Musical', 'Architecture', 'Clothing', 'Buddhist', 'Food', 'Greeting', 'Beverage', 'Garden', 'Utensils', 'Wedding', 'Tally'] Give a one word answer only!"
+PROMPTS = [
+    "What kind of chart is this?",
+    "What are the varibles in this chart?",
+    "What is the relationship between the variables in this chart?",
+    "What is the trend in this chart?"]
 
-MODEL = "llava:13b"
+MODEL = "llama3.2-vision"
 
 CSV_FILENAME = "analysis_results.csv"
 
-FIELDNAMES = ['Image URL', 'Prompt', 'Analysis Result', 'Status']
+FIELDNAMES = ['Image ID', PROMPTS[0], PROMPTS[1], PROMPTS[2], PROMPTS[3]]
 
-SYSTEM_PROMPT = "You are an expert in the intersectionality between image analysis and cultural analysis, providing insights that integrate visual elements with cultural contexts."
+SYSTEM_PROMPT = "You are an expert in reading graphs and understanding the data from it."
